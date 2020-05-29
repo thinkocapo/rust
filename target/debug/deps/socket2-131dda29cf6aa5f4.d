@@ -1,0 +1,11 @@
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/debug/deps/socket2-131dda29cf6aa5f4.rmeta: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sockaddr.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/socket.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/utils.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sys/unix.rs
+
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/debug/deps/libsocket2-131dda29cf6aa5f4.rlib: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sockaddr.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/socket.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/utils.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sys/unix.rs
+
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/debug/deps/socket2-131dda29cf6aa5f4.d: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sockaddr.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/socket.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/utils.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sys/unix.rs
+
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/lib.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sockaddr.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/socket.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/utils.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.3.12/src/sys/unix.rs:

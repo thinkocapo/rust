@@ -1,0 +1,1 @@
+{"rustc":834860773259020163,"features":"[]","target":16533319445399767456,"profile":14672114853574311971,"path":17161094577269546508,"deps":[[16890090595707213301,"futures",false,12635522241005471937]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/tower-service-e52033cb06fefb71/dep-lib-tower_service-e52033cb06fefb71"}}],"rustflags":[],"metadata":12253456114421428797}

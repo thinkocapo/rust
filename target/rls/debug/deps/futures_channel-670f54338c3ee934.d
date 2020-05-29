@@ -1,0 +1,9 @@
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/rls/debug/deps/futures_channel-670f54338c3ee934.rmeta: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lock.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/mod.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/queue.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/oneshot.rs
+
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/rls/debug/deps/futures_channel-670f54338c3ee934.d: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lock.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/mod.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/queue.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/oneshot.rs
+
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lib.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/lock.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/mod.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/mpsc/queue.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.5/src/oneshot.rs:

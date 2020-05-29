@@ -1,0 +1,10 @@
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/debug/deps/libasync_trait-376dbf50831fed4e.dylib: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/args.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/expand.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lifetime.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/parse.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/receiver.rs
+
+/Users/adamtoth-fejel/Documents/GitHub/sentry-rust/target/debug/deps/async_trait-376dbf50831fed4e.d: /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lib.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/args.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/expand.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lifetime.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/parse.rs /Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/receiver.rs
+
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lib.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/args.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/expand.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/lifetime.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/parse.rs:
+/Users/adamtoth-fejel/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.31/src/receiver.rs:
