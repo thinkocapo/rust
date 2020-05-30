@@ -26,7 +26,7 @@ use sentry_actix::SentryMiddleware;
 
 use actix_web::Responder;
 
-mod handlers;
+
 
 
 // My version
@@ -77,7 +77,7 @@ fn handled_new(_req: &HttpRequest) -> Result<String, Error> {
 
     Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into())
     order = json.loads(request.data)
-    /* print "Processing order for: " + order["email"] */
+    print "Processing order for: " + order["email"]
     cart = order["cart"]
     
     process_order(cart)
