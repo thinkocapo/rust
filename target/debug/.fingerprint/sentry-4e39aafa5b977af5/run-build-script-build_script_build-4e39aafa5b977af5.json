@@ -1,1 +1,0 @@
-{"rustc":834860773259020163,"features":"","target":0,"profile":0,"path":0,"deps":[[5551671848802537175,"build_script_build",false,14222445170070338723]],"local":[{"RerunIfChanged":{"output":"debug/build/sentry-4e39aafa5b977af5/output","paths":["build.rs","Cargo.toml"]}}],"rustflags":[],"metadata":0}

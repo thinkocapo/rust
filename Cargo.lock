@@ -115,7 +115,7 @@ dependencies = [
  "futures",
  "futures-cpupool",
  "h2",
- "http 0.1.21",
+ "http",
  "httparse",
  "language-tags",
  "lazy_static 1.4.0",
@@ -305,10 +305,6 @@ version = "0.1.0"
 dependencies = [
  "actix-rt",
  "actix-web",
- "failure",
- "failure_derive",
- "handlers",
- "http 0.2.1",
  "sentry 0.12.1",
  "sentry-actix",
 ]
@@ -801,21 +797,12 @@ dependencies = [
  "bytes 0.4.12",
  "fnv",
  "futures",
- "http 0.1.21",
+ "http",
  "indexmap",
  "log",
  "slab",
  "string",
  "tokio-io",
-]
-
-[[package]]
-name = "handlers"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "99e99031bb4e91feb40f108464741b39cc74bbf5bc13b32c9d1af513bd8be1d2"
-dependencies = [
- "paste",
 ]
 
 [[package]]
@@ -860,17 +847,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "http"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "28d569972648b2c512421b5f2a405ad6ac9666547189d0c5477a3f200f3e02f9"
-dependencies = [
- "bytes 0.5.4",
- "fnv",
- "itoa",
-]
-
-[[package]]
 name = "http-body"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -878,7 +854,7 @@ checksum = "6741c859c1b2463a423a1dbce98d418e6c3c3fc720fb0d45528657320920292d"
 dependencies = [
  "bytes 0.4.12",
  "futures",
- "http 0.1.21",
+ "http",
  "tokio-buf",
 ]
 
@@ -939,7 +915,7 @@ dependencies = [
  "futures",
  "futures-cpupool",
  "h2",
- "http 0.1.21",
+ "http",
  "http-body",
  "httparse",
  "iovec",
@@ -1480,28 +1456,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "paste"
-version = "0.1.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3431e8f72b90f8a7af91dec890d9814000cb371258e0ec7370d93e085361f531"
-dependencies = [
- "paste-impl",
- "proc-macro-hack",
-]
-
-[[package]]
-name = "paste-impl"
-version = "0.1.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25af5fc872ba284d8d84608bf8a0fa9b5376c96c23f503b007dfd9e34dde5606"
-dependencies = [
- "proc-macro-hack",
- "proc-macro2 1.0.17",
- "quote 1.0.6",
- "syn 1.0.27",
-]
-
-[[package]]
 name = "percent-encoding"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1556,12 +1510,6 @@ name = "ppv-lite86"
 version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "237a5ed80e274dbc66f86bd59c1e25edc039660be53194b5fe0a482e0f2612ea"
-
-[[package]]
-name = "proc-macro-hack"
-version = "0.5.16"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e0456befd48169b9f13ef0f0ad46d492cf9d2dbb918bcf38e01eed4ce3ec5e4"
 
 [[package]]
 name = "proc-macro2"
@@ -1880,7 +1828,7 @@ dependencies = [
  "encoding_rs",
  "flate2",
  "futures",
- "http 0.1.21",
+ "http",
  "hyper 0.12.35",
  "hyper-tls 0.3.2",
  "log",

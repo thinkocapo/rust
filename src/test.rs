@@ -67,7 +67,7 @@ fn handled_new(_req: &HttpRequest) -> Result<String, Error> {
 
 
 
-fn checkout(_req: &HttpRequest) -> Result<String, Error> {
+/* fn checkout(_req: &HttpRequest) -> Result<String, Error> {
     
     let mut inventory = HashMap::new();
 
@@ -77,13 +77,13 @@ fn checkout(_req: &HttpRequest) -> Result<String, Error> {
 
     Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into())
     order = json.loads(request.data)
-    print "Processing order for: " + order["email"]
+    /* print "Processing order for: " + order["email"] */
     cart = order["cart"]
     
     process_order(cart)
 
     return "Success"
-}
+} */
 
 fn main() {
 
@@ -96,7 +96,7 @@ fn main() {
           //|r| r.f(handled)).resource("/unhandled", |r| r.f(unhandled))
         //.resource("/checkout", |r| r.f(checkout))
     server::new(|| {
-        App::new().middleware(SentryMiddleware::new()).resource("/", |r| r.method(http::Method::POST).with(index))
+        App::new().middleware(SentryMiddleware::new())
         .resource("/handled_new", |r| r.f(handled_new))}).bind("127.0.0.1:3001")
         .unwrap()
         .run();
