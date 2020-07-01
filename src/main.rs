@@ -2,12 +2,13 @@ use std::env;
 use std::io;
 use std::num::ParseIntError;
 
-use actix_web::{server, App, Error, HttpRequest};
+use actix_web::{server, App, Error, HttpRequest, HttpResponse};
 use sentry_actix::SentryMiddleware;
 use sentry::integrations::failure::capture_error;
 
-use actix_web::middleware::cors;
+use actix_web::middleware::cors::Cors;
 use actix_web::http::header;
+use actix_web::http;
 
 
 fn failing(_req: &HttpRequest) -> Result<String, Error> {
@@ -48,20 +49,45 @@ fn main() {
     let _guard = sentry::init("https://92f3ece3dfb04b978f5de29777e456ee@o87286.ingest.sentry.io/5259785");
     env::set_var("RUST_BACKTRACE", "1");
 
-    let _cors = cors::Cors::build()
-    .allowed_origin("127.0.0.1")
-    .allowed_methods(vec!["GET", "POST"])
-    .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
-    .allowed_header(header::CONTENT_TYPE)
-    .max_age(3600)
-    .finish();
+    // OLD 06/30/20
+    // let _cors = cors::Cors::build()
+    // .allowed_origin("127.0.0.1")
+    // .allowed_methods(vec!["GET", "POST"])
+    // .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
+    // .allowed_header(header::CONTENT_TYPE)
+    // .max_age(3600)
+    // .finish();
 
-    server::new(|| {
-        App::new()
-            .middleware(SentryMiddleware::new())
-            .resource("/", |r| r.f(failing))
+    // OLD 06/30/20
+    // server::new(|| {
+    //     App::new()
+    //         .middleware(SentryMiddleware::new())
+    //         .resource("/", |r| r.f(failing))
+            // .resource("/handled", |r| r.f(handled))
+            // .resource("/checkout", |r| r.f(checkout))
+    // })
+    // .bind("127.0.0.1:3001")
+    // .unwrap()
+    // .run();
+
+    // NEW 07/01/20
+    let app = server::new(|| { App::new()
+        .configure(|app| Cors::for_app(app) // <- Construct CORS middleware builder
+            // .allowed_origin("https://www.rust-lang.org/")
+            // .allowed_origin("127.0.0.1")
+            .allowed_origin("http://localhost:5000/") // React runs on 5000
+            .allowed_methods(vec!["GET", "POST"])
+            .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
+            .allowed_header(header::CONTENT_TYPE)
+            .max_age(3600)
+            // .middleware(SentryMiddleware::new()) // fails
+            .resource("/index.html", |r| {
+                r.method(http::Method::GET).f(|_| HttpResponse::Ok());
+                r.method(http::Method::HEAD).f(|_| HttpResponse::MethodNotAllowed());
+            })
             .resource("/handled", |r| r.f(handled))
             .resource("/checkout", |r| r.f(checkout))
+            .register())
     })
     .bind("127.0.0.1:3001")
     .unwrap()
