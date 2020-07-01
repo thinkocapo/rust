@@ -13,6 +13,8 @@ use std::collections::HashMap;
 use std::process;
 use sentry::integrations::failure::capture_error;
 use actix_web::{http};
+use actix_web::Json;
+use actix_web::http::Method;
 
 
 use sentry::integrations::panic::register_panic_handler;
@@ -54,36 +56,46 @@ fn handled_new(_req: &HttpRequest) -> Result<String, Error> {
 
 }
 
-/* fn process_order(inventory):
-    global Inventory
-    tempInventory = Inventory
-    for item in cart:
-        if Inventory[item['id']] <= 0:
-            raise Exception("Not enough inventory for " + item['id'])
-        else:
-            tempInventory[item['id']] -= 1
-            print 'Success: ' + item['id'] + ' was purchased, remaining stock is ' + str(tempInventory[item['id']])
-    Inventory = tempInventory  */
+// fn process_order(inventory):
+//     global Inventory
+//     tempInventory = Inventory
+//     for item in cart:
+//         if Inventory[item['id']] <= 0:
+//             raise Exception("Not enough inventory for " + item['id'])
+//         else:
+//             tempInventory[item['id']] -= 1
+//             //print 'Success: ' + item['id'] + ' was purchased, remaining stock is ' + str(tempInventory[item['id']])
+//     Inventory = tempInventory 
 
 
 
-/* fn checkout(_req: &HttpRequest) -> Result<String, Error> {
+
+fn checkout(_req: &HttpRequest) -> Result<String, Error> {
+
+    println!("{:?}", _req);
+
+    //return OK(_req.to_string());
     
-    let mut inventory = HashMap::new();
+    //let mut inventory = HashMap::new();
 
-    inventory.insert("wrench", "1");
-    inventory.insert("nails", "1");
-    inventory.insert("hammer", "1");
+    //inventory.insert("wrench", "1");
+    //inventory.insert("nails", "1");
+    //inventory.insert("hammer", "1");
 
-    Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into())
-    order = json.loads(request.data)
-    print "Processing order for: " + order["email"]
-    cart = order["cart"]
+    //order = json.loads(_req.body());
+
     
-    process_order(cart)
+    
+    
+    //Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into());
+    //order = json.loads(&HttpRequest.data);
+    //print "Processing order for: " + order["email"]
+    //cart = order["cart"]
+    
+    //process_order(cart);
 
-    return "Success"
-} */
+    return Ok("success".to_string());
+}
 
 fn main() {
 
@@ -97,10 +109,11 @@ fn main() {
         //.resource("/checkout", |r| r.f(checkout))
     server::new(|| {
         App::new().middleware(SentryMiddleware::new())
-        .resource("/handled_new", |r| r.f(handled_new))}).bind("127.0.0.1:3001")
-        .unwrap()
+        .resource("/handled_new", |r| r.f(handled_new))
+        .resource("/checkout", |r| r.f(checkout))}).bind("127.0.0.1:3001").unwrap()
         .run();
 
+        //.resource("/checkout", |r| r.method(http::Method::POST).f(checkout))}).bind("127.0.0.1:3001").unwrap()
         sentry::integrations::panic::register_panic_handler();
 
         
