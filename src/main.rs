@@ -51,11 +51,11 @@ fn main() {
 
     // NEW 07/01/20
     let app = server::new(|| { App::new()
-        .configure(|app| Cors::for_app(app) // <- Construct CORS middleware builder
-            // .allowed_origin("https://www.rust-lang.org/")
-            .allowed_origin("http://localhost:5000/") // React runs on 5000
+        .configure(|app| Cors::for_app(app)
+            .allowed_origin("*") 
             .allowed_methods(vec!["GET", "POST"])
-            .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT, ])
+            // .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT, ]) // default example
+            .allowed_headers(vec![header::ACCESS_CONTROL_ALLOW_ORIGIN, header::AUTHORIZATION, header::ACCEPT, header::CONTENT_TYPE, header::REFERER, header::USER_AGENT])
             .allowed_header(header::CONTENT_TYPE)
             .max_age(3600)
             // .middleware(SentryMiddleware::new()) // fails
