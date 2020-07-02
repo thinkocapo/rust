@@ -37,7 +37,7 @@ fn handled(_req: &HttpRequest) -> Result<String, Error> {
 }
 
 fn checkout(_req: &HttpRequest) -> Result<String, Error> {
-    
+
     // TODO
     // 1 request paylod from _req
 
@@ -52,13 +52,9 @@ fn main() {
     // NEW 07/01/20
     let app = server::new(|| { App::new()
         .configure(|app| Cors::for_app(app)
-            .allowed_origin("*") 
+            .allowed_origin("http://localhost:3000")
             .allowed_methods(vec!["GET", "POST"])
-            // .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT, ]) // default example
-            .allowed_headers(vec![header::ACCESS_CONTROL_ALLOW_ORIGIN, header::AUTHORIZATION, header::ACCEPT, header::CONTENT_TYPE, header::REFERER, header::USER_AGENT])
-            .allowed_header(header::CONTENT_TYPE)
             .max_age(3600)
-            // .middleware(SentryMiddleware::new()) // fails
             .resource("/index.html", |r| {
                 r.method(http::Method::GET).f(|_| HttpResponse::Ok());
                 r.method(http::Method::HEAD).f(|_| HttpResponse::MethodNotAllowed());
