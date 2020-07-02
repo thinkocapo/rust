@@ -52,7 +52,7 @@ fn main() {
     // NEW 07/01/20
     let app = server::new(|| { App::new()
         .configure(|app| Cors::for_app(app)
-            .allowed_origin("http://localhost:3000")
+            .allowed_origin("http://localhost:5000")
             .allowed_methods(vec!["GET", "POST"])
             .max_age(3600)
             .resource("/index.html", |r| {
