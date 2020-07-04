@@ -1,5 +1,5 @@
 use std::env;
-use std::io;
+// use std::io;
 use std::num::ParseIntError;
 
 use actix_web::{server, App, Error, HttpRequest, HttpResponse};
@@ -7,13 +7,15 @@ use sentry_actix::SentryMiddleware;
 use sentry::integrations::failure::capture_error;
 
 use actix_web::middleware::cors::Cors;
-use actix_web::http::header;
+// use actix_web::http::header;
 use actix_web::http;
+// use actix_web::log;
+// use log::debug;
+use std::io::{self, Write};
 
-
-fn failing(_req: &HttpRequest) -> Result<String, Error> {
-    Err(io::Error::new(io::ErrorKind::Other, "Something went really wrong here").into())
-}
+// fn failing(_req: &HttpRequest) -> Result<String, Error> {
+//     Err(io::Error::new(io::ErrorKind::Other, "Something went really wrong here").into())
+// }
 
 fn multiply_new(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
     let first_number: i32 = first_number_str.parse()?;
@@ -37,6 +39,10 @@ fn handled(_req: &HttpRequest) -> Result<String, Error> {
 }
 
 fn checkout(_req: &HttpRequest) -> Result<String, Error> {
+    // log::debug!("HERE {}", "it is");
+    // log("hi there")
+    print!("this ");
+    io::stdout().flush().unwrap();
 
     // TODO
     // 1 request paylod from _req
@@ -50,7 +56,7 @@ fn main() {
     env::set_var("RUST_BACKTRACE", "1");
 
     // NEW 07/01/20
-    let app = server::new(|| { App::new()
+    let _app = server::new(|| { App::new()
         .configure(|app| Cors::for_app(app)
             .allowed_origin("http://localhost:5000")
             .allowed_methods(vec!["GET", "POST"])
