@@ -2,8 +2,10 @@ use std::env;
 // use std::io;
 use std::num::ParseIntError;
 
+// use actix_web::{server, App, Error, HttpRequest, HttpResponse, Payload};
 use actix_web::{server, App, Error, HttpRequest, HttpResponse};
-use sentry_actix::SentryMiddleware;
+
+// use sentry_actix::SentryMiddleware;
 use sentry::integrations::failure::capture_error;
 
 use actix_web::middleware::cors::Cors;
@@ -12,6 +14,8 @@ use actix_web::http;
 // use actix_web::log;
 // use log::debug;
 use std::io::{self, Write};
+
+// use actix_web::payload;
 
 // fn failing(_req: &HttpRequest) -> Result<String, Error> {
 //     Err(io::Error::new(io::ErrorKind::Other, "Something went really wrong here").into())
@@ -38,17 +42,22 @@ fn handled(_req: &HttpRequest) -> Result<String, Error> {
     Ok(format!("{} * {} => {}", first, second, result))
 }
 
+// 'Payload' not found
+// fn checkout(_req: &HttpRequest, _: &mut Payload) -> Result<String, Error> {
 fn checkout(_req: &HttpRequest) -> Result<String, Error> {
-    // log::debug!("HERE {}", "it is");
-    // log("hi there")
-    print!("this ");
+
+    print!("endpoint {} ", _req.uri());
     io::stdout().flush().unwrap();
+    
+    // compiles
+    // let data = _req.headers();
+    
+    // does not compile
+    let data = _req.payload();
 
-    // TODO
-    // 1 request paylod from _req
 
-    // Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into())
     Ok(format!("{}", "checked out"))
+    // Err(io::Error::new(io::ErrorKind::Other, "An error happens here").into())
 }
 
 fn main() {
@@ -68,6 +77,7 @@ fn main() {
             .resource("/handled", |r| r.f(handled))
             .resource("/checkout", |r| r.f(checkout))
             .register())
+            // .resource("/checkout", |r| r.f(web::get().to(checkout)))
     })
     .bind("127.0.0.1:3001")
     .unwrap()
