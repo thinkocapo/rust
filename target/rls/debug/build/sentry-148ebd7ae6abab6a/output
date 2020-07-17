@@ -1,4 +1,0 @@
-cargo:rerun-if-changed=build.rs
-
-cargo:rerun-if-changed=Cargo.toml
-

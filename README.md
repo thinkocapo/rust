@@ -9,4 +9,5 @@
 3. run "cargo run"
 4. go to URL http://localhost:3001/checkout
 5. go to URL http://localhost:3001/handled_new
+6. go to URL http://localhost:3001/unhandled
 
