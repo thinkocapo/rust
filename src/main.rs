@@ -3,14 +3,14 @@ use std::env;
 use std::num::ParseIntError;
 use std::sync::Mutex;
 
+use actix_web::http;
+use actix_web::middleware::cors::Cors;
 use actix_web::{server, App, HttpRequest, HttpResponse, Json};
 use sentry::integrations::failure::capture_error as capture_failure_error;
 use sentry::protocol::value::to_value;
 use sentry::User;
 use sentry_actix::SentryMiddleware;
 use serde::{Deserialize, Serialize};
-use actix_web::middleware::cors::Cors;
-use actix_web::{http};
 
 lazy_static::lazy_static! {
     static ref HASHMAP: Mutex<HashMap<&'static str, u32>> = {
@@ -118,18 +118,25 @@ fn main() {
     let _guard =
         sentry::init("https://ef73d8aa7ac643d2b6f1d1e604d607eb@o87286.ingest.sentry.io/5250920");
 
-    server::new(|| { App::new()
-        .middleware(SentryMiddleware::new())
-        .configure(|app| Cors::for_app(app)
-            .allowed_origin("http://localhost:5000")
-            .allowed_methods(vec!["GET", "POST"])
-            .max_age(3600)
-            .resource("/handled_new",|r| r.method(http::Method::GET).f(handled_new))
-            .resource("/unhandled",|r| r.method(http::Method::GET).f(fakedatabseapp))
-            .resource("/checkout", |r| r.method(http::Method::POST).with(checkout))
-            .register())
-        })
-        .bind("127.0.0.1:3001")
-        .unwrap()
-        .run();
+    server::new(|| {
+        App::new()
+            .middleware(SentryMiddleware::new())
+            .configure(|app| {
+                Cors::for_app(app)
+                    .allowed_origin("http://localhost:5000")
+                    .allowed_methods(vec!["GET", "POST"])
+                    .max_age(3600)
+                    .resource("/handled_new", |r| {
+                        r.method(http::Method::GET).f(handled_new)
+                    })
+                    .resource("/unhandled", |r| {
+                        r.method(http::Method::GET).f(fakedatabseapp)
+                    })
+                    .resource("/checkout", |r| r.method(http::Method::POST).with(checkout))
+                    .register()
+            })
+    })
+    .bind("127.0.0.1:3001")
+    .unwrap()
+    .run();
 }
